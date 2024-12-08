@@ -21,7 +21,7 @@ function Tourism_Navbar() {
         
           <FontAwesomeIcon icon={faMapMarkedAlt} /> Tour Planner
         </Link>
-        <div className="nav-link" onClick={() => window.location.assign('https://darling-youtiao-d5ad39.netlify.app/')}>
+        <div className="nav-link" onClick={() => window.location.assign('https://prismatic-gaufre-2b9998.netlify.app/')}>
   <FontAwesomeIcon icon={faLightbulb} /> Tour Tips
 </div>
 
