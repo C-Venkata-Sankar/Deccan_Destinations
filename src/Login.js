@@ -17,7 +17,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://deccan-destinations-backend.onrender.com/login", {
+      const response = await fetch("https://deccan-destinations-backend.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
