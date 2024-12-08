@@ -1,0 +1,268 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Container Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .tour-planner-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    height: 60px; /* Standard navbar height */
+    font-size: 16px;
+    background-color: #4CAF50; /* Example color */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content Area */
+  .tour-planner-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title and Subtitle */
+  h2 {
+    color: #4CAF50;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Location Selection Inputs */
+  .location-selection {
+    margin-bottom: 20px;
+  }
+  
+  .location-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .suggestions {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Generate Plan Button */
+  .generate-plan-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .generate-plan-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Map Container */
+  .map-container {
+    margin-top: 20px;
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Cards Container */
+  .cards-container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Individual Cards */
+  .card {
+    width: 100%; /* Make the cards take full width */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .route-statistics, .tourist-spots {
+    text-align: left;
+  }
+  
+  .route-statistics h4, .tourist-spots h4 {
+    color: #4CAF50;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .route-statistics p, .tourist-spots p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .route-statistics p strong, .tourist-spots p strong {
+    font-weight: bold;
+  }
+  
+  /* Route Directions Styling */
+  .route-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .route-card ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .route-card ul li strong {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .route-card h3 {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  /* Route Directions Card Size */
+  .route-card {
+    width: 100%; /* Route Directions Card takes full width */
+  }
+  
+  /* Adjust Route Statistics Card to look better */
+  .route-statistics {
+    background-color: #f9f9f9; /* Slightly lighter background */
+    border: 1px solid #ddd;
+  }
+  
+  .route-statistics p {
+    margin-top: 10px;
+  }
+  
+  .tourist-spots {
+    background-color: #f9f9f9; /* Slightly lighter background */
+    border: 1px solid #ddd;
+  }
+  
+  .tourist-spots ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .tourist-spots li {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .tourist-spots li strong {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .route-card .route-directions {
+    display: none;
+  }
+  
+  .route-card .route-directions.show {
+    display: block;
+  }
+  
+  /* Responsive Styling for Small Screens */
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 20px;
+    }
+  
+    .location-input {
+      width: 100%;
+    }
+  }
+/* Show Directions Button */
+.show-directions-btn {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s ease;
+    text-align: center;
+    margin-bottom: 10px; /* Add some space below the button */
+    width: 100%; /* Make it take up full width */
+  }
+  
+  .show-directions-btn:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+  
+  .show-directions-btn:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a custom focus outline */
+  }
+    

@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tourist-place {
+    text-align: center;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 10px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+  .description, .hotels, .cuisine {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .description h2, .hotels h2, .cuisine h2 {
+    color: #4CAF50;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  

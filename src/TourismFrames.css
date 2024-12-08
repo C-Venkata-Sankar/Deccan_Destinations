@@ -1,0 +1,186 @@
+/* Container styling */
+.tourism-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Reduced gap for better alignment */
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto; /* Center the container horizontally with margin */
+    justify-items: center; /* Center cards horizontally within the container */
+    align-items: center; /* Center cards vertically within the container */
+    padding: 50px 0;
+    perspective: 2000px; /* Increased depth for the 3D effects */
+}
+.navbar-links{
+    margin-left: 20px;
+}
+
+/* Frame styling */
+.tourism-frame {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    height: 350px; /* Fixed height for all cards */
+    width: 100%; /* Full width of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, background-color 0.3s ease;
+    transform-style: preserve-3d;
+    background-color: #fff; /* White background by default */
+    overflow: hidden;
+}
+
+/* Hover effect for the frame */
+.tourism-frame:hover {
+    transform: rotateY(15deg) rotateX(10deg) scale(1.1); /* Stronger 3D effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+    background-color: #1a73e8; /* Color change on hover */
+}
+
+/* Image styling */
+.tourism-frame-img {
+    width: 100%;
+    height: 100%; /* Make the image fill the entire card */
+    object-fit: cover; /* Ensure the image covers the whole card without distorting */
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Hover effect for the image */
+.tourism-frame:hover .tourism-frame-img {
+    opacity: 0.7; /* Fade the image slightly */
+    transform: scale(1.2); /* More noticeable zoom */
+}
+
+/* Frame info styling */
+.tourism-frame-info {
+    position: absolute;
+    bottom: 15px;
+    margin-right: 20px;
+    left: 15px;
+    color: white;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for text */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start position for smooth slide-up */
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+/* Hover effect for the info */
+.tourism-frame:hover .tourism-frame-info {
+    opacity: 1; /* Fade the text in */
+    transform: translateY(0); /* Text slides into place */
+    color: #fff; /* Keep text white */
+}
+
+/* Text styling */
+.tourism-frame-info h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Text hover effect */
+.tourism-frame:hover .tourism-frame-info h3 {
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8); /* Stronger shadow */
+    transform: scale(1.05); /* Slight scale for emphasis */
+}
+
+/* Paragraph styling */
+.tourism-frame-info p {
+    font-size: 1.1rem;
+    margin-top: 5px;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for text paragraph */
+.tourism-frame:hover .tourism-frame-info p {
+    color: #fff; /* Make text more prominent */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the container */
+.tourism-container {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .tourism-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+
+    .tourism-frame {
+        height: 350px; /* Maintain card size */
+    }
+
+    .tourism-frame-img {
+        height: 100%; /* Full height of the card */
+    }
+
+    .tourism-frame-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .tourism-frame-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tourism-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+
+    .tourism-frame {
+        height: 350px; /* Maintain card size */
+    }
+
+    .tourism-frame-img {
+        height: 100%; /* Full height of the card */
+    }
+
+    .tourism-frame-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .tourism-frame-info p {
+        font-size: 1rem;
+    }
+}
+
+/* Special styling to ensure 3 cards in the first row and 2 cards in the second row */
+.tourism-container > .tourism-frame:nth-child(4), 
+.tourism-container > .tourism-frame:nth-child(5) {
+    grid-column: span 1; /* Ensure these cards occupy 1 column */
+}
+
+.tourism-container > .tourism-frame:nth-child(4) {
+    margin-left: auto; /* Center the 2nd row cards */
+}
+
+.tourism-container > .tourism-frame:nth-child(5) {
+    margin-right: auto; /* Center the 2nd row cards */
+}
