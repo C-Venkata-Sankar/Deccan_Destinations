@@ -25,7 +25,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch("https://deccan-destinations-backend.onrender.com", {
+      const response = await fetch("https://deccan-destinations-backend.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
